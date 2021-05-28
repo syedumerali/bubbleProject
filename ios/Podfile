@@ -1,0 +1,27 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+pod 'RNAnimatedSplash', :path => '../node_modules/react-native-animated-splash'
+
+
+platform :ios, '13.0'
+
+target 'BubbleLeaf' do
+  config = use_native_modules!
+  # use_frameworks!
+
+  use_react_native!(:path => config["reactNativePath"])
+  # below lines for archive
+
+#   post_install do |installer| 
+#   installer.pods_project.targets.each do |target|
+#     if target.name == "React-Core.common-AccessibilityResources"
+#       target.remove_from_project
+#     end
+#   end
+# end
+ 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
+end
+
+
